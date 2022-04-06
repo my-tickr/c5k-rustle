@@ -9,6 +9,7 @@ The one-word Wordle clone mob-programmed in Rust that you always wanted
 
 ## Goals of the challenge!
 - Apply the real Wordle rules to the guess input that we harvest from the command line
+- Use the hardcoded solution for now (it's "proxy", in case you were wondering)
 - Right letter in the right place -> 🟩
 - Right letter in the wrong place -> 🟨
 - Wrong letter -> ⬛️
