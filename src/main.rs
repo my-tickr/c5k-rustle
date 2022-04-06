@@ -10,12 +10,12 @@ struct Guess {
 // This lets us pass a Guess instance to println
 impl fmt::Display for Guess {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "({})", self.word)
+        write!(f, "({})", self.word.to_uppercase())
     }
 }
 
 fn main() {
-    let solution = fetch_todays_solution();
+    let solution = fetch_todays_solution().to_uppercase();
 
     let guess = Guess::parse();
 
@@ -27,7 +27,9 @@ fn main() {
 fn process_guess(guess: &Guess, solution: String) -> String {
     // Replace this with a real implementation!
     // "🟩🟩🟨⬛⬛".to_string()
-    if guess.word.eq(&solution) {
+    let uppercase_guess = guess.word.to_uppercase();
+
+    if uppercase_guess.eq(&solution) {
         return "🟩🟩🟩🟩🟩".to_string()
     }
     "⬛⬛⬛⬛⬛".to_string()
