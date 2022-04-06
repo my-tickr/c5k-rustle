@@ -26,6 +26,15 @@ fn main() {
 
 fn process_guess(guess: &Guess, solution: String) -> String {
     // Replace this with a real implementation!
+
+    for pos in 0..guess.word.chars().count() {
+        println!("{}", pos);
+
+        if solution.chars().nth(pos).unwrap() == guess.word.chars().nth(pos).unwrap() {
+            println!("{}", ":)");
+        }
+    }
+
     "🟩🟩🟨⬛⬛".to_string()
 }
 
