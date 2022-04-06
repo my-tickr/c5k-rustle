@@ -32,7 +32,7 @@ fn process_guess(guess: &Guess, solution: String) -> String {
         return "🟩🟩🟩🟩🟩".to_string();
     }
 
-    let guess_array = uppercase_guess.chars();
+    let mut guess_array = uppercase_guess.chars();
     let mut solution_array = solution.chars();
 
     let mut result = "".to_string();
@@ -40,17 +40,20 @@ fn process_guess(guess: &Guess, solution: String) -> String {
     let mut counter = 0;
 
     while counter < 5 {
-        let option = solution_array.next();
-        match option  {
-            Some(char) => println!("{}", char),
-            None =>  println!("{}", "none"),
+        let next_solution_char = solution_array.next().unwrap();
+        let next_guess_char = guess_array.next().unwrap();
+
+
+        if next_solution_char == next_guess_char {
+            result += &"🟩".to_string();
+            counter += 1;
+            continue;
         }
+        result += &"⬛".to_string();
         counter += 1;
     }
 
-    println!("{}", result);
-
-    "⬛⬛⬛⬛⬛".to_string()
+    result
 }
 
 fn fetch_todays_solution() -> String {
