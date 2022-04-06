@@ -26,31 +26,19 @@ fn main() {
 
 fn process_guess(guess: &Guess, solution: String) -> String {
     // Replace this with a real implementation!
-    let mut response = "".to_string();
-
-    let mut unmatched_chars = "".to_string();
-    let mut result_array = "".to_string();
-
-    for _pos in 0..guess.word.chars().count() {
-        result_array.push('⬛');
-    }
+    let mut matched = "⬛⬛⬛⬛⬛".to_string();
 
     for _pos in 0..guess.word.chars().count() {
         let char = guess.word.chars().nth(_pos).unwrap();
 
         if solution.chars().nth(_pos).unwrap() == char {
-            response.push('🟩');
-        } else {
-            unmatched_chars.push(char);
+            matched.replace_range(_pos.._pos,"🟩");
+        } else if solution.contains(char) {
+            matched.replace_range(_pos.._pos,"🟨");
         }
-//         } else if solution.contains(char) {
-//             response.push('🟨');
-//         } else {
-//             response.push('⬛');
-//         }
     }
 
-    response
+    matched
 }
 
 fn fetch_todays_solution() -> String {
