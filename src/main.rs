@@ -28,10 +28,27 @@ fn process_guess(guess: &Guess, solution: String) -> String {
     // Replace this with a real implementation!
     // "🟩🟩🟨⬛⬛".to_string()
     let uppercase_guess = guess.word.to_uppercase();
-
     if uppercase_guess.eq(&solution) {
-        return "🟩🟩🟩🟩🟩".to_string()
+        return "🟩🟩🟩🟩🟩".to_string();
     }
+
+    let guess_array = uppercase_guess.chars();
+    let mut solution_array = solution.chars();
+
+    let mut result = "".to_string();
+
+    for (i, c) in guess_array.enumerate() {
+        let option = solution_array.nth(i);
+        let x = option.unwrap();
+        if c.eq(&x) {
+            result += &"🟩".to_string();
+        } else {
+            result += &"⬛".to_string();
+        }
+    }
+
+    println!("{}", result);
+
     "⬛⬛⬛⬛⬛".to_string()
 }
 
