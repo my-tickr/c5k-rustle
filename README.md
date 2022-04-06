@@ -16,6 +16,7 @@ The one-word Wordle clone mob-programmed in Rust that you always wanted!
 - Right letter, duplicated in the guess, but not the solution -> ⬛️ 
 - (eg. solution is SMELL, guess is HISSY, only the first S gets a yellow square, second gets black)
 - Guesses should be UPPERCASED in the output, just like in the real Wordle
+- As we don't have the time to create a full Wordle clone, we can just validate one guess at a time, using the command in the Getting Started section.
 
 ## Mob programming rules
 - Everyone clones the repo
