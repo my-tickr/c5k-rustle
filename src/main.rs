@@ -37,14 +37,15 @@ fn process_guess(guess: &Guess, solution: String) -> String {
 
     let mut result = "".to_string();
 
-    for (i, c) in guess_array.enumerate() {
-        let option = solution_array.nth(i);
-        let x = option.unwrap();
-        if c.eq(&x) {
-            result += &"🟩".to_string();
-        } else {
-            result += &"⬛".to_string();
+    let mut counter = 0;
+
+    while counter < 5 {
+        let option = solution_array.next();
+        match option  {
+            Some(char) => println!("{}", char),
+            None =>  println!("{}", "none"),
         }
+        counter += 1;
     }
 
     println!("{}", result);
