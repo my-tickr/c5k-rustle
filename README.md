@@ -1,5 +1,8 @@
 # c5k-rustle
-The one-word Wordle clone mob-programmed in Rust that you always wanted
+The one-word Wordle clone mob-programmed in Rust that you always wanted!
+
+## Liverpool
+This repository is for the Liverpool mob to work on.
 
 ## Getting started
 - Make sure you have Rust installed - https://www.rust-lang.org/tools/install
