@@ -28,16 +28,26 @@ fn process_guess(guess: &Guess, solution: String) -> String {
     // Replace this with a real implementation!
     let mut response = "".to_string();
 
-    for pos in 0..guess.word.chars().count() {
-        let char = guess.word.chars().nth(pos).unwrap();
+    let mut unmatched_chars = "".to_string();
+    let mut result_array = "".to_string();
 
-        if solution.chars().nth(pos).unwrap() == char {
+    for _pos in 0..guess.word.chars().count() {
+        result_array.push('⬛');
+    }
+
+    for _pos in 0..guess.word.chars().count() {
+        let char = guess.word.chars().nth(_pos).unwrap();
+
+        if solution.chars().nth(_pos).unwrap() == char {
             response.push('🟩');
-        } else if solution.contains(char) {
-            response.push('🟨');
         } else {
-            response.push('⬛');
+            unmatched_chars.push(char);
         }
+//         } else if solution.contains(char) {
+//             response.push('🟨');
+//         } else {
+//             response.push('⬛');
+//         }
     }
 
     response
