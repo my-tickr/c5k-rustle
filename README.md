@@ -24,3 +24,7 @@ The one-word Wordle clone mob-programmed in Rust that you always wanted!
 - The next driver takes over, pulls the repo, and the fun continues
 - London team: Please use the branch `london-mob`
 - Liverpool team: Please use the branch `liverpool-mob`
+
+## How do we compare our work?
+- At the end of the challenge, commit & push what you have to your branch, and open a pull request against `main`
+- This way we can see how each team built their implementation on top of the barebones starter implementation
