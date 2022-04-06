@@ -22,3 +22,5 @@ The one-word Wordle clone mob-programmed in Rust that you always wanted!
 - The first person to drive does so until a piece of functionality is implemented
 - At that point, commit & push
 - The next driver takes over, pulls the repo, and the fun continues
+- London team: Please use the branch `london-mob`
+- Liverpool team: Please use the branch `liverpool-mob`
