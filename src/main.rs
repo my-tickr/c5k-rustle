@@ -26,7 +26,11 @@ fn main() {
 
 fn process_guess(guess: &Guess, solution: String) -> String {
     // Replace this with a real implementation!
-    "🟩🟩🟨⬛⬛".to_string()
+    // "🟩🟩🟨⬛⬛".to_string()
+    if guess.word.eq(&solution) {
+        return "🟩🟩🟩🟩🟩".to_string()
+    }
+    "⬛⬛⬛⬛⬛".to_string()
 }
 
 fn fetch_todays_solution() -> String {
