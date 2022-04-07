@@ -27,17 +27,28 @@ fn main() {
 fn process_guess(guess: &Guess, solution: String) -> String {
     // Replace this with a real implementation!
     let mut matched = "⬛⬛⬛⬛⬛".to_string();
-
     for _pos in 0..guess.word.chars().count() {
         let char = guess.word.chars().nth(_pos).unwrap();
-
         if solution.chars().nth(_pos).unwrap() == char {
-            matched.replace_range(_pos.._pos,"🟩");
+            matched.replace_range(
+                    matched
+                        .char_indices()
+                        .nth(_pos)
+                        .map(|(pos, ch)| (pos..pos + ch.len_utf8()))
+                        .unwrap(),
+                    "🟩",
+                );
         } else if solution.contains(char) {
-            matched.replace_range(_pos.._pos,"🟨");
+            matched.replace_range(
+                    matched
+                        .char_indices()
+                        .nth(_pos)
+                        .map(|(pos, ch)| (pos..pos + ch.len_utf8()))
+                        .unwrap(),
+                    "🟨",
+                );
         }
     }
-
     matched
 }
 
